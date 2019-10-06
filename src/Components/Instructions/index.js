@@ -35,8 +35,8 @@ export default class Instructions extends Component  {
                 <ListGroup>
                   <ListGroupItem><b>PLACE X,Y,DIRECTION</b> - To place the pacman on the table at the position (X,Y) facing the DIRECTION specified.</ListGroupItem>
                   <ListGroupItem><b>MOVE</b> - To move the pacman by one step in the direction it is currently facing.</ListGroupItem>
-                  <ListGroupItem><b>LEFT</b> - To rotate the pacman backward by 90 degress without changing it's position.</ListGroupItem>
-                  <ListGroupItem><b>RIGHT</b> - To rotate the pacman forward by 90 degress without changing it's position.</ListGroupItem>
+                  <ListGroupItem><b>LEFT</b> - To rotate the pacman counter clockwise by 90 degress without changing it's position.</ListGroupItem>
+                  <ListGroupItem><b>RIGHT</b> - To rotate the pacman clockwise by 90 degress without changing it's position.</ListGroupItem>
                   <ListGroupItem><b>REPORT</b> - To get the current X,Y and DIRECTION of the pacman.</ListGroupItem>
                   <ListGroupItem><b>RESET</b> - To reset the pacman's position and take it off the table.</ListGroupItem>
                 </ListGroup>
