@@ -2,12 +2,12 @@
 
 exports[`Header should render without throwing an error 1`] = `
 <header
-  className="toy-robot-simulator-header"
+  className="pacman-simulator-header"
 >
   <h5
     className="ml-3 header-text"
   >
-    Toy Robot Simulator
+    Pacman Simulator
   </h5>
 </header>
 `;

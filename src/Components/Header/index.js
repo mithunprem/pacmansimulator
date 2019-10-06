@@ -4,8 +4,8 @@ import './header.scss';
 const Header = () => {
   return (
     <Fragment>
-      <header className="toy-robot-simulator-header">
-        <h5 className="ml-3 header-text">Toy Robot Simulator</h5>
+      <header className="pacman-simulator-header">
+        <h5 className="ml-3 header-text">Pacman Simulator</h5>
       </header>
     </Fragment>
   );

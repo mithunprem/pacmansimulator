@@ -1,16 +1,16 @@
 import React, { Fragment } from 'react';
 import CommandList from '../../Components/CommandList';
-import RobotPositionReport from '../../Components/RobotPositionReport';
+import PacmanPositionReport from '../../Components/PacmanPositionReport';
 import PropTypes from 'prop-types';
 import './reports.scss';
 
-const Reports = ({ reportRobotStatus, robotPosition, commandList }) => {
+const Reports = ({ reportPacmanStatus, pacmanPosition, commandList }) => {
 
   return (
     <Fragment>
       <div className="reports m-3">
-        { reportRobotStatus ?
-          <RobotPositionReport robotPosition={robotPosition} /> : ''
+        { reportPacmanStatus ?
+          <PacmanPositionReport pacmanPosition={pacmanPosition} /> : ''
         }
         { commandList.length > 0 ?
           <CommandList commandList={commandList} /> : ''
@@ -21,8 +21,8 @@ const Reports = ({ reportRobotStatus, robotPosition, commandList }) => {
 }
 
 Reports.propTypes = {
-  reportRobotStatus: PropTypes.bool,
-  robotPosition: PropTypes.object,
+  reportPacmanStatus: PropTypes.bool,
+  pacmanPosition: PropTypes.object,
   commandList: PropTypes.array
 }
 

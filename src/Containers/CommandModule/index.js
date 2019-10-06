@@ -8,37 +8,37 @@ export default class CommandModule extends Component {
 
   state = {
     commandList: [],
-    robotPosition: {
+    pacmanPosition: {
       x: -1,
       y: -1,
       direction: ''
     },
-    shouldReportRobotStatus: false
+    shouldReportPacmanStatus: false
   }
 
   executeCommand = command => {
-    let { commandList, robotPosition, shouldReportRobotStatus } = this.state;
+    let { commandList, pacmanPosition, shouldReportPacmanStatus } = this.state;
 
-    ({ commandList, robotPosition, shouldReportRobotStatus }
-      = processCommand(command, commandList, robotPosition));
+    ({ commandList, pacmanPosition, shouldReportPacmanStatus }
+      = processCommand(command, commandList, pacmanPosition));
 
     this.setState({
       commandList,
-      robotPosition,
-      shouldReportRobotStatus
+      pacmanPosition,
+      shouldReportPacmanStatus
     });
   }
 
   render() {
-    const { commandList, robotPosition, shouldReportRobotStatus } = this.state;
+    const { commandList, pacmanPosition, shouldReportPacmanStatus } = this.state;
 
     return (
       <Fragment>
         <CommandInput executeCommand={this.executeCommand} />
         <hr />
         <Reports
-          reportRobotStatus={shouldReportRobotStatus}
-          robotPosition={robotPosition}
+          reportPacmanStatus={shouldReportPacmanStatus}
+          pacmanPosition={pacmanPosition}
           commandList={commandList}
         />
         <Instructions />

@@ -1,11 +1,11 @@
 /*
   Convert the direction to a number based on the lookup table. The lookup table
   has values for direction mimicing the position of a clock's hour needle.
-  Based on the direction to which the robot should be changed to, add or
+  Based on the direction to which the Pacman should be changed to, add or
   subtract 3 from the numerical value. And then do a reverse lookup to identify
-  the new direction that the robot now points to.
+  the new direction that the Pacman now points to.
 */
-const changeRobotDirection = (command, position) => {
+const changePacmanDirection = (command, position) => {
   const { direction } = position;
   let directionInNumber = directionToNumberMapping[direction];
 
@@ -21,7 +21,7 @@ const changeRobotDirection = (command, position) => {
 
 /*
   Numerical value for each of the directions, mimicing the direction of a Hour needle in a Clock.
-  Robot facing North will be having a direction value of 0 and 3, 6, 9 for east,
+  Pacman facing North will be having a direction value of 0 and 3, 6, 9 for east,
   south and west respectively.
 */
 const directionToNumberMapping = {
@@ -47,4 +47,4 @@ const getDirectionFromNumber = directionInNumber => {
   )
 }
 
-export default changeRobotDirection;
+export default changePacmanDirection;

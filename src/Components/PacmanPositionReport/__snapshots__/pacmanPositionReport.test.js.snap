@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`RobotPositionReport should render without throwing an error 1`] = `
+exports[`PacmanPositionReport should render without throwing an error 1`] = `
 <div
   className="report alert alert-info"
 >
   <span>
-    Robot's current position is: 
+    Pacman's current position is: 
     1
     , 
     1

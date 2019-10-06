@@ -1,15 +1,15 @@
 import { PLACE_DELIMITER, POSITION_DELIMITER, MAX_COORDINATE } from '../Constants';
 
-const setRobotPosition = (command, robotPosition) => {
+const setPacmanPosition = (command, pacmanPosition) => {
   const [, position ] = command.split(PLACE_DELIMITER);
   const [ x, y, direction ] = position.split(POSITION_DELIMITER);
   let isCommandExecuted = false;
 
-  // Set the robot's x and y only if it is within the board dimensions.
-  // Any place command that will try to place the robot outside the board will
+  // Set the Pacman's x and y only if it is within the board dimensions.
+  // Any place command that will try to place the Pacman outside the board will
   // be ignored.
   if ( x <= MAX_COORDINATE && y <= MAX_COORDINATE) {
-    robotPosition = {
+    pacmanPosition = {
       x: Number(x),
       y: Number(y),
       direction
@@ -17,7 +17,7 @@ const setRobotPosition = (command, robotPosition) => {
     isCommandExecuted = true;
   }
 
-  return [ robotPosition, isCommandExecuted ];
+  return [ pacmanPosition, isCommandExecuted ];
 }
 
-export default setRobotPosition;
+export default setPacmanPosition;

@@ -53,7 +53,7 @@ exports[`Reports should render the commandList throwing an error 1`] = `
 </div>
 `;
 
-exports[`Reports should render the robotPosition when it is passed as a prop 1`] = `
+exports[`Reports should render the pacmanPosition when it is passed as a prop 1`] = `
 <div
   className="reports m-3"
 >
@@ -61,7 +61,7 @@ exports[`Reports should render the robotPosition when it is passed as a prop 1`]
     className="report alert alert-info"
   >
     <span>
-      Robot's current position is: 
+      Pacman's current position is: 
       1
       , 
       1

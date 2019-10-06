@@ -1,43 +1,43 @@
-import setRobotPosition from './placeCommandHandler';
-import moveRobot from './moveCommandHandler';
-import changeRobotDirection from './directionChangeHandler';
+import setPacmanPosition from './placeCommandHandler';
+import movePacman from './moveCommandHandler';
+import changePacmanDirection from './directionChangeHandler';
 
-const processCommand = (command, commandList, robotPosition) => {
+const processCommand = (command, commandList, pacmanPosition) => {
   let isCommandExecuted = false;
-  let shouldReportRobotStatus = false;
+  let shouldReportPacmanStatus = false;
 
   // Convert the command to lowercase to ensure the processing will work
   // the same for any case input.
   command = command.toLowerCase();
 
   if (command.startsWith('place')) {
-    [ robotPosition, isCommandExecuted ] = setRobotPosition(command, robotPosition);
+    [ pacmanPosition, isCommandExecuted ] = setPacmanPosition(command, pacmanPosition);
   } else {
-    const { x } = robotPosition;
+    const { x } = pacmanPosition;
 
     /*
-      Ensure that the robot is on the table before executing any MOVE
-      or direction commands. If the robot is on the table, then the
+      Ensure that the Pacman is on the table before executing any MOVE
+      or direction commands. If the Pacman is on the table, then the
       x coordinate should be greater than -1.
     */
     if (x > -1) {
       switch(command) {
         case 'move':
-          [ robotPosition, isCommandExecuted ] = moveRobot(robotPosition);
+          [ pacmanPosition, isCommandExecuted ] = movePacman(pacmanPosition);
           break;
         case 'left':
         case 'right':
           // Execute the direction change`.
-          robotPosition = changeRobotDirection(command, robotPosition);
+          pacmanPosition = changePacmanDirection(command, pacmanPosition);
           isCommandExecuted = true;
           break;
         case 'report':
-          shouldReportRobotStatus = true;
+          shouldReportPacmanStatus = true;
           isCommandExecuted = true;
           break;
         case 'reset':
           commandList = [];
-          robotPosition = {
+          pacmanPosition = {
             x: -1,
             y: -1,
             direction: ''
@@ -53,7 +53,7 @@ const processCommand = (command, commandList, robotPosition) => {
     commandList.push(command);
   }
 
-  return { commandList, robotPosition, shouldReportRobotStatus };
+  return { commandList, pacmanPosition, shouldReportPacmanStatus };
 }
 
 
